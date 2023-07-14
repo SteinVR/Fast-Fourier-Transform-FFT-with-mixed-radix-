@@ -25,19 +25,21 @@ std::vector<std::complex<double>> FFT::fft_main(const std::vector<std::complex<d
         return x;
     }
     if (N % 5 == 0) {
-        std::cout << "radix_5_fft" << std::endl;
+
+        //Output name of the function for understanding
+        //std::cout << "radix_5_fft" << std::endl;
         return radix_5_fft(x, direction);
     }
     else if (N % 3 == 0) {
-        std::cout << "radix_3_fft" << std::endl;
+        //std::cout << "radix_3_fft" << std::endl;
         return radix_3_fft(x, direction);
     }
     else if (N % 2 == 0) {
-        std::cout << "radix_2_fft" << std::endl;
+        //std::cout << "radix_2_fft" << std::endl;
         return radix_2_fft(x, direction);
     }
     else {
-        std::cout << "classic_dft" << std::endl;
+        //std::cout << "classic_dft" << std::endl;
         return classic_dft(x, direction);
     }
 }
